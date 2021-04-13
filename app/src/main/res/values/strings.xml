@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DeviceIdJava</string>
+    <string name="deviceId">DeviceId</string>
+    <string name="hintMsg">hintMsg</string>
+</resources>
