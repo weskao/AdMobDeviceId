@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText(label, deviceId);
         clipboard.setPrimaryClip(clip);
-
+        Log.i("CopyTextToClipboard", "Already copy text \"" + deviceId + "\" to clipboard!");
     }
 
     public String getAdMobDeviceId(String s) {
