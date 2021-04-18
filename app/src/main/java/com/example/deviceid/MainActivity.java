@@ -1,4 +1,4 @@
-package com.example.deviceidjava;
+package com.example.deviceid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,17 +24,18 @@ public class MainActivity extends AppCompatActivity {
         String deviceId = getAdMobDeviceId(android_id).toUpperCase();
         Log.i("device id", "device id=" + deviceId);
 
-        TextView textViewAdMobDeviceId = (TextView) findViewById(R.id.textViewDeviceId) ;
+        TextView textViewAdMobDeviceId = (TextView) findViewById(R.id.textViewDeviceId);
         textViewAdMobDeviceId.setText(deviceId);
 
 
         CopyTextToClipboard("AdMobDeviceId", deviceId);
 
-        TextView textViewHintMsg = (TextView) findViewById(R.id.textViewHintMsg) ;
+        TextView textViewHintMsg = (TextView) findViewById(R.id.textViewHintMsg);
         textViewHintMsg.setText("(Already copy your device id to clipboard!)");
 
-//        Log.i("CopyDeviceId", "Already copy your deviceId \"" + deviceId + "\" to clipboard!");
+        //        Log.i("CopyDeviceId", "Already copy your deviceId \"" + deviceId + "\" to clipboard!");
     }
+
     private void CopyTextToClipboard(String label, String deviceId) {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText(label, deviceId);
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Create Hex String
             StringBuffer hexString = new StringBuffer();
-            for (int i=0; i<messageDigest.length; i++)
+            for (int i = 0; i < messageDigest.length; i++)
                 hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
             return hexString.toString();
 
