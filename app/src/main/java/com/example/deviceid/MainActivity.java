@@ -53,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
             // Create Hex String
             StringBuffer hexString = new StringBuffer();
             for (int i = 0; i < messageDigest.length; i++)
-                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+            {
+                hexString.append(String.format("%02X", 0xFF & messageDigest[i]));
+            }
+
             return hexString.toString();
 
         } catch (NoSuchAlgorithmException e) {
