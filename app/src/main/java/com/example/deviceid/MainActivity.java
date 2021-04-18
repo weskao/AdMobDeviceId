@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         textViewAdMobDeviceId.setText(deviceId);
 
 
-        CopyTextToClipboard("AdMobDeviceId", deviceId);
+        copyTextToClipboard("AdMobDeviceId", deviceId);
 
         TextView textViewHintMsg = (TextView) findViewById(R.id.textViewHintMsg);
         textViewHintMsg.setText("(Already copy your device id to clipboard!)");
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //        Log.i("CopyDeviceId", "Already copy your deviceId \"" + deviceId + "\" to clipboard!");
     }
 
-    private void CopyTextToClipboard(String label, String deviceId) {
+    private void copyTextToClipboard(String label, String deviceId) {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText(label, deviceId);
         clipboard.setPrimaryClip(clip);
